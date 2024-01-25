@@ -6,6 +6,7 @@ import pix from "../../assets/nj.png";
 import pix1 from "../../assets/hj.png";
 import CreateBlog from "./CreateBlog";
 import BlogCard from "./BlogCard";
+import BlogPro from "../BlogPro";
 
 const Dashboard = () => {
   const readToggle = useSelector((state: any) => state.toggle);
@@ -35,7 +36,7 @@ const Dashboard = () => {
     <div>
       <div className="flex-1 p-4">
         <div className="px-5 w-full border overflow-auto max-h-[800px] pt-11">
-          {readToggle === "create" && <CreateBlog />}
+          {readToggle === "create" && <BlogPro />}
           {readToggle === "view" && <ViewOneBlog />}
           {readToggle === "viewAll" && <ViewBlogs />}
           {readToggle !== "create" &&

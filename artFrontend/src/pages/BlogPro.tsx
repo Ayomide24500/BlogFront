@@ -4,10 +4,14 @@ import { useState } from "react";
 import { useQuill } from "react-quilljs";
 import React from "react";
 import "react-quill/dist/quill.snow.css";
+import { useSelector } from "react-redux";
+import { PiDotsThreeOutlineFill } from "react-icons/pi";
+import { CreateBlog } from "../Api/blogApi";
 const BlogPro = () => {
   const { quill, quillRef }: any = useQuill();
   const [content, setContent] = useState("");
   const [value, setValue] = useState("");
+  const [title, setTitle] = useState("");
 
   console.log(value);
 
@@ -47,9 +51,45 @@ const BlogPro = () => {
     toolbar: toolbarOptions,
   };
 
+  const ID = useSelector((state: any) => state.ID);
+
   return (
     <div>
-      <p className="font-bold text-xl pb-8">Create Your Blog Here</p>
+      <div className=" w-[99%] flex justify-between items-center">
+        <h1 className="text-xl font-bold mb-4">Draft in Ayomide</h1>
+        <div className="py-6 w-[20%] flex justify-center items-center gap-3">
+          <button
+            className="py-3 px-3 bg-green-400 text-white font-bold rounded-lg"
+            onClick={() => {
+              CreateBlog({ title, content: value, category: "general" }, ID);
+            }}
+          >
+            publish
+          </button>
+          <PiDotsThreeOutlineFill className="font-bold" />
+          <div
+            className="py-2 px-4 bg-green-500"
+            style={{ borderRadius: "100%" }}
+          >
+            A
+          </div>
+          <div
+            className="py-2 px-4 bg-green-500"
+            style={{ borderRadius: "100%" }}
+          >
+            1
+          </div>
+        </div>
+      </div>
+      <input
+        type="text"
+        placeholder="Title"
+        value={title}
+        onChange={(e) => {
+          setTitle(e.target.value);
+        }}
+        className="font-bold text-3xl pb-7 w-full border-none outline-none"
+      />
       <div>
         <ReactQuill
           modules={module}

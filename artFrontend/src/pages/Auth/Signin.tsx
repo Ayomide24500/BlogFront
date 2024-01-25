@@ -4,9 +4,11 @@ import React from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { loginAPI } from "../../Api/Api";
+import { loginState } from "../../global/reduxState";
+import { useDispatch } from "react-redux";
 function SigniN() {
   const navigate = useNavigate();
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const schema = yup.object({
     email: yup.string().email().required("Must be filled"),
     password: yup.string().required("Must be filled"),
@@ -23,7 +25,7 @@ function SigniN() {
   const handleSubmiteNow = handleSubmit((data: any) => {
     loginAPI(data).then((res: any) => {
       console.log(data);
-      //   dispatch(loginUser(res.data));
+      dispatch(loginState(res.data));
       navigate("/dashboard");
     });
   });
@@ -78,7 +80,7 @@ function SigniN() {
             type="submit"
             className="bg-blue-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
           >
-            Sign Up
+            SignIn
           </button>
           <div className="w-full flex justify-center text-[12px] mt-8 ">
             <span className="font-bold text-purple-600">

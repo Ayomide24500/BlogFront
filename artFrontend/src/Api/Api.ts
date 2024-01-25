@@ -16,19 +16,17 @@ export const registerAPI = async (data: any) => {
 
 export const loginAPI = async (data: any) => {
   try {
-    return await axios
-      .post(`${URL}/login-user`, data, { withCredentials: true })
-      .then((res) => {
-        return res.data;
-      });
+    return await axios.post(`${URL}/login-user`, data).then((res) => {
+      return res.data;
+    });
   } catch (error) {
     return error;
   }
 };
 
-export const verifyAPI = async (userID: string) => {
+export const verifyAPI = async (userID: string, data) => {
   try {
-    return await axios.get(`${URL}/verify-user/${userID}`).then((res) => {
+    return await axios.get(`${URL}/verify-user/${userID}`, data).then((res) => {
       return res.data;
     });
   } catch (error) {
@@ -89,20 +87,6 @@ export const getUserPhoneAPI = async (userID: string, data: any) => {
     console.log("got it: ", data);
     return await axios
       .patch(`${URL}/update-user-phone/${userID}`, { phoneNumber: data })
-      .then((res) => {
-        return res.data;
-      });
-  } catch (error) {
-    return error;
-  }
-};
-
-export const hospitalChoiceAPI = async (data: any, userID: string) => {
-  try {
-    return await axios
-      .patch(`${URL}/choose-hospital/${userID}`, data, {
-        withCredentials: true,
-      })
       .then((res) => {
         return res.data;
       });

@@ -7,11 +7,16 @@ import Verify from "../pages/Auth/Verify";
 import SignIn from "../pages/Auth/Signin";
 import DashboardLayout from "../Components/Layout/DashboardLayout";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import PrivateRouter from "./PrivateRoute";
 
 export const mainRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <PrivateRouter>
+        <Layout />
+      </PrivateRouter>
+    ),
     children: [
       {
         path: "/",
