@@ -10,10 +10,10 @@ const ViewOneBlog = () => {
       <div className="p-5  h-[80%]">
 
     <div className="flex items-center h-[80%] w-[100%] flex-col lg:flex-row ">
-    <div className="h-[50%] w-[50%] ">
-      <div className="font-bold text-xl ">APC confirms that they are talking to Wike in the hope that he will defect from the PDP</div>
+    <div className="h-[50%] w-[50%]">
+      <div className="font-bold text-xl w-[300px]">APC confirms that they are talking to Wike in the hope that he will defect from the PDP</div>
 
-      <div className="flex content-between space-x-3 pt-[20px]">
+      <div className="flex content-between space-x-3 pt-[20px] sm: flex-col">
       <div>community.</div>
     <div>23 January 2024</div>
       </div>
@@ -25,13 +25,13 @@ const ViewOneBlog = () => {
 
   
         <div className="h-[80%] w-[60%] ">
-          <img src={pix} className=" object-cover"/>
+          <img src={pix} className="object-cover"/>
         </div>
     </div>
       </div>
 
       <div className=" flex  h-full space-x-3 flex-col lg:flex-row items-center">
-        <div className="h-full w-[70%] bg-white shadow-2xl ">
+        <div className="h-full w-[100%] bg-white shadow-2xl lg:w-[100%]">
         ALL Progressive Congress officials have confirmed that they have initiated talks with Governor Nyesom Wike of Rivers State ahead of the 2023 elections with a view to woo him away from the Peoples Democratic Party (PDP).<br/>
         <br/>
 
@@ -118,15 +118,15 @@ Their statement read: “We welcome this judgement and assert that the wisdom of
 
 
 
-        <div className="h-full w-[30%]">
+        <div className="h-full w-[90%] flex-wrap lg:w-[30%] ">
          <div className=" ml-[50px]">
-         <div className=" text-[rgb(0,47,84)] text-2xl font-bold ml-[80px] lg: ml-0">Welcome!</div><br/>
+         <div className=" text-[rgb(0,47,84)] text-2xl font-bold lg:ml-0">Welcome!</div><br/>
           <br/>
           <div className=" font-bold">Must Reads Online Guides..</div><br/>
           <br/>
 
           
-          <div className=" underline text-[rgb(24,99,171)]">Top 10 Dropshipping Products</div><br/>
+          <div className=" underline text-[rgb(24,99,171)] sm: w-[70%]">Top 10 Dropshipping Products</div><br/>
           <br/>
 <div  className=" underline text-[rgb(24,99,171)]">Affiliate Marketing Money Making</div><br/>
 <br/>
@@ -137,7 +137,7 @@ Their statement read: “We welcome this judgement and assert that the wisdom of
 <div  className=" underline text-[rgb(24,99,171)]">Best WordPress hosting for SEO</div><br/>
           
           <div>
-            <img src={pics} className="w-[80%]"/>
+            <img src={pics} className="w-[80%] sm:w-[70%]"/>
           </div><br/>
 
 <div className="text-[rgb(0,47,84)] text-2xl font-bold ml-[80px]">Recent Posts</div><br/>
