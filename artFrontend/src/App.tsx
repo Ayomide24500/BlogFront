@@ -1,12 +1,16 @@
-import React from 'react'
-import { RouterProvider } from 'react-router-dom'
-import {mainRouter} from "./router/mainRouter"
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import { mainRouter } from "./router/mainRouter";
+import { Provider } from "react-redux";
+import { store } from "./global/Store";
 const App = () => {
   return (
     <div>
-      <RouterProvider router={mainRouter}/>
+      <Provider store={store}>
+        <RouterProvider router={mainRouter} />
+      </Provider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
