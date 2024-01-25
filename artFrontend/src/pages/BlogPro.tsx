@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useQuill } from "react-quilljs";
 import React from "react";
 import "react-quill/dist/quill.snow.css";
-const App = () => {
+const BlogPro = () => {
   const { quill, quillRef }: any = useQuill();
   const [content, setContent] = useState("");
   const [value, setValue] = useState("");
@@ -47,7 +47,7 @@ const App = () => {
 
   return (
     <div>
-      App the
+      <p className="font-bold text-xl pb-8">Create Your Blog Here</p>
       <div>
         <ReactQuill
           modules={module}
@@ -56,16 +56,17 @@ const App = () => {
           onChange={setValue}
           style={{
             height: "60vh",
+            background: "rgb(134 239 172 / var(--tw-bg-opacity));",
           }}
         />
 
-        <div>
+        {/* <div>
           Second quill
           <div ref={quillRef}></div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
 
-export default App;
+export default BlogPro;

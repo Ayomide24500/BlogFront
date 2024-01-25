@@ -1,49 +1,72 @@
+import { Link, useNavigate } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { verifyAPI } from "../../Api/Api";
 const Verify = () => {
+  const navigate = useNavigate();
+  const schema = yup.object({
+    token: yup.string().required("Must be filled"),
+    email: yup.string().email().required("Must be filled"),
+  });
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const handleSubmiteNow = handleSubmit((data: any) => {
+    verifyAPI(data).then(() => {
+      navigate("/login");
+    });
+  });
+
   return (
-    <div>
-      <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-        <div className="bg-white p-8 rounded-md shadow-md max-w-md w-full">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">Sign In</h2>
-          <form>
-            <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-gray-600 text-sm font-medium mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="password"
-                className="block text-gray-600 text-sm font-medium mb-2"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                className="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500"
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400"
-            >
-              Sign in here
-            </button>
-          </form>
-        </div>
+    <div className="w-full h-[100vh] flex justify-center items-center ">
+      <div className=" border rounded-md w-[400px] min-h-[200px]">
+        <div className="m-4 font-[400] mb-16">Verify</div>
+        <form className="m-3" onSubmit={handleSubmiteNow}>
+          <div className="my-2">
+            <input
+              className="w-[100%] h-[45px] rounded-sm border pl-2"
+              placeholder="email"
+              {...register("email")}
+            />
+            {errors.token?.message && (
+              <div className="text-red-700 text-[12px] text-right ">
+                {errors.token?.message}
+              </div>
+            )}
+          </div>
+          <div className="my-2">
+            <input
+              className="w-[100%] h-[45px] rounded-sm border pl-2"
+              placeholder="token"
+              {...register("token")}
+            />
+            {errors.token?.message && (
+              <div className="text-red-700 text-[12px] text-right ">
+                {errors.token?.message}
+              </div>
+            )}
+          </div>
+
+          <button
+            className="w-[80%] bg-blue-500 mt-8 h-[49px] rounded-sm text-white ml-9"
+            type="submit"
+          >
+            verify this Account
+          </button>
+          <div className="w-full flex justify-center text-[12px] mt-8 ">
+            <Link to="/register">
+              <span className="ml-1 font-bold">Go back to register here</span>
+            </Link>{" "}
+          </div>
+        </form>
       </div>
     </div>
   );
