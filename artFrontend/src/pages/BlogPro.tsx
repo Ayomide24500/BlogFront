@@ -6,7 +6,7 @@ import React from "react";
 import "react-quill/dist/quill.snow.css";
 import { useSelector } from "react-redux";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
-import { CreateBlog } from "../Api/blogApi";
+import { CreateBlog } from "../Api/BlogApi";
 const BlogPro = () => {
   const { quill, quillRef }: any = useQuill();
   const [content, setContent] = useState("");

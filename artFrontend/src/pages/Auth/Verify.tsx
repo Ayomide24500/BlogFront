@@ -4,9 +4,12 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import React from "react";
 import { verifyAPI } from "../../Api/Api";
+
 const Verify = () => {
   const navigate = useNavigate();
-  const ID = useParams();
+
+  const { ID } = useParams();
+
   const schema = yup.object({
     token: yup.string().required("Must be filled"),
     email: yup.string().email().required("Must be filled"),
@@ -20,17 +23,19 @@ const Verify = () => {
     resolver: yupResolver(schema),
   });
 
-  const handleSubmiteNow = (ID, data: any) => {
-    verifyAPI(ID, data).then(() => {
+  const handleSubmiteNow = handleSubmit((data: any) => {
+    verifyAPI(data, ID!).then((res) => {
+      console.log(res);
+
       navigate("/login");
     });
-  };
+  });
 
   return (
     <div className="w-full h-[100vh] flex justify-center items-center ">
       <div className=" border rounded-md w-[400px] min-h-[200px]">
         <div className="m-4 font-[400] mb-16">Verify</div>
-        <form className="m-3">
+        <form className="m-3" onSubmit={handleSubmiteNow}>
           <div className="my-2">
             <input
               className="w-[100%] h-[45px] rounded-sm border pl-2"
@@ -59,16 +64,13 @@ const Verify = () => {
           <button
             className="w-[80%] bg-blue-500 mt-8 h-[49px] rounded-sm text-white ml-9"
             type="submit"
-            onClick={(ID) => {
-              // handleSubmiteNow(ID);
-            }}
           >
             verify this Account
           </button>
           <div className="w-full flex justify-center text-[12px] mt-8 ">
             <Link to="/register">
               <span className="ml-1 font-bold">Go back to register here</span>
-            </Link>
+            </Link>{" "}
           </div>
         </form>
       </div>
