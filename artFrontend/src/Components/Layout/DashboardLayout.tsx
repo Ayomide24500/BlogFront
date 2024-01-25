@@ -3,13 +3,14 @@ import React from "react";
 import Header from "../static/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import Dashboard from "../../pages/Dashboard/Dashboard";
+import DashboardHeader from "../static/DashboardHeader";
 
 const DashboardLayout = () => {
   return (
     <div className="flex h-screen">
-      <Sidebar />
+      <Sidebar isVisible={undefined} />
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Header />
+        <DashboardHeader />
         <Dashboard />
       </div>
     </div>

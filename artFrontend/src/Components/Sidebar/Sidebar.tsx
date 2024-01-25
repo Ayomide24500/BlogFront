@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeToggle } from "../../global/reduxState";
-const Sidebar = () => {
+const Sidebar = ({ isVisible }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="bg-green-300 text-white w-[10%] min-h-screen p-4 flex justify-center items-center flex-col gap-3 lg:flex hidden">
+    <div
+      className={`bg-green-300 text-white w-[10%] min-h-screen p-4 flex justify-center items-center flex-col gap-3 lg:flex ${
+        isVisible ? "block" : ""
+      }`}
+    >
       Blog
       <div className="h-[100%] w-full flex justify-center items-center flex-col gap-5">
         <button

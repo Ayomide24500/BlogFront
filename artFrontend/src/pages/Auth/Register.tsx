@@ -21,10 +21,12 @@ const Register = () => {
     resolver: yupResolver(schema),
   });
 
-  const handleSubmiteNow = handleSubmit((data: any, password: any) => {
-    console.log(data);
-    registerAPI(data, password).then((res) => {
-      navigate("/verify");
+  const handleSubmiteNow = handleSubmit((data) => {
+    const { email, password } = data;
+    registerAPI({ email, password }).then((res) => {
+      if (res) {
+        navigate("/verify");
+      }
       return res?.data;
     });
   });
