@@ -1,6 +1,9 @@
 import React from "react";
 import pix from "../../assets/wike_and_apc_governors_new.jpg"
-
+import pics from "../../assets/xWordPress-hosting-for-SEO.jpg.pagespeed.ic.nY6kTNvu-Y.webp"
+import pis from "../../assets/xPBN-Web-Hosting-1.jpg.pagespeed.ic.O1PcBBHu90.webp"
+import img from "../../assets/xaffiliate-marketing.jpg.pagespeed.ic.FUYQjwx5Z1.webp"
+import imgs from "../../assets/xGet-cheap-.com-domains.jpg.pagespeed.ic.kdyAFnu9GY.webp" 
 const ViewOneBlog = () => {
   return (
     <div>
@@ -23,8 +26,8 @@ const ViewOneBlog = () => {
     </div>
       </div>
 
-      <div className=" flex  bg-blue-500 h-screen space-x-3">
-        <div className="h-[90%] w-[70%] bg-white shadow-2xl ">
+      <div className=" flex  bg-blue-500 h-full space-x-3">
+        <div className="h-full w-[70%] bg-white shadow-2xl ">
         ALL Progressive Congress officials have confirmed that they have initiated talks with Governor Nyesom Wike of Rivers State ahead of the 2023 elections with a view to woo him away from the Peoples Democratic Party (PDP).<br/>
         <br/>
 
@@ -49,19 +52,23 @@ Mr Aliyu said: “We are talking to Wike and we are talking to so many of them. 
 “So, if Wike decides to come to us, we would gladly welcome him. I can confirm to you that we are talking to him.”<br/>
 <br/>
 
-It is not yet clear, however, if these defection talks only include Governor Wike or also involve the other members of the G5. Other governors in the group include Seyi Makinde of Oyo State, Samuel Ortom of Benue State, Okezie Ikpeazu of Abia State and Ifeanyi Ugwuanyi of Enugu State.
+It is not yet clear, however, if these defection talks only include Governor Wike or also involve the other members of the G5. Other governors in the group include Seyi Makinde of Oyo State, Samuel Ortom of Benue State, Okezie Ikpeazu of Abia State and Ifeanyi Ugwuanyi of Enugu State.<br/>
+<br/>
+
+GOVERNOR Samuel Ortom of Benue State has hinted that he may decide to back former Anambra State governor Peter Obi in next year's presidential elections pointing out that he cannot publicly support...<br/>
+<br/>
         </div>
 
 
 
-        <div className="h-[90%] w-[30%] bg-pink-800 ">
+        <div className="h-full w-[30%] bg-pink-800 ">
          <div className=" ml-[50px]">
          <div className=" text-[rgb(0,47,84)] text-2xl font-bold ml-[80px]">Welcome!</div><br/>
           <br/>
           <div className=" font-bold">Must Reads Online Guides..</div><br/>
           <br/>
 
-          <div>
+          
           <div className=" underline text-[rgb(24,99,171)]">Top 10 Dropshipping Products</div><br/>
           <br/>
 <div  className=" underline text-[rgb(24,99,171)]">Affiliate Marketing Money Making</div><br/>
@@ -71,7 +78,35 @@ It is not yet clear, however, if these defection talks only include Governor Wik
 <div  className=" underline text-[rgb(24,99,171)]">Influence of Artificial Intelligence</div><br/>
 <br/>
 <div  className=" underline text-[rgb(24,99,171)]">Best WordPress hosting for SEO</div><br/>
-          </div>
+          
+          <div>
+            <img src={pics} className="w-[80%]"/>
+          </div><br/>
+
+<div className="text-[rgb(0,47,84)] text-2xl font-bold ml-[80px]">Recent Posts</div><br/>
+
+<div className=" underline text-[rgb(24,99,171)]">Top 10 Dropshipping Products</div><br/>
+          <br/>
+<div  className=" underline text-[rgb(24,99,171)]">Affiliate Marketing Money Making</div><br/>
+<br/>
+<div  className=" underline text-[rgb(24,99,171)]">Top 10 Affiliate Marketers list</div><br/>
+<br/>
+<div  className=" underline text-[rgb(24,99,171)]">Influence of Artificial Intelligence</div><br/>
+<br/>
+<div  className=" underline text-[rgb(24,99,171)]">Best WordPress hosting for SEO</div><br/>
+
+<div>
+  <img src={pis} className="w-[90%]"/>
+</div><br/>
+
+<div>
+  <img src={img} className="w-[90%]"/>
+</div><br/>
+
+<div>
+  <img src={imgs} className="w-[90%]"/>
+</div><br/>
+          
 
          </div>
         </div>
