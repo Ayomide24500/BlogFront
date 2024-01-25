@@ -48,7 +48,7 @@ const Dashboard = () => {
                     <h1 className="lg:text-2xl font-bold pt-3 lg:pl-28 text-xl text-center">
                       Welcome to our Article pages
                     </h1>
-                    <button className="py-4 px-4 bg-green-300 ml-20 mt-20 lg:ml-24 lg:mt-48">
+                    <button className="py-4 px-4 bg-green-300 ml-10 mt-20 lg:ml-24 lg:mt-48">
                       Read more
                     </button>
                   </div>

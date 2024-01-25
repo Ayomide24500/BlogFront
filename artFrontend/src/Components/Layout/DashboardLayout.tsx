@@ -7,11 +7,19 @@ import DashboardHeader from "../static/DashboardHeader";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex h-screen">
-      <Sidebar isVisible={undefined} />
+    <div className="relative h-screen flex">
+      {/* Sidebar */}
+      <Sidebar isVisible={null} />
+
+      {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
+        {/* Header */}
         <DashboardHeader />
-        <Dashboard />
+
+        {/* Body Content */}
+        <div className="flex-1 overflow-x-hidden overflow-y-auto">
+          <Dashboard />
+        </div>
       </div>
     </div>
   );

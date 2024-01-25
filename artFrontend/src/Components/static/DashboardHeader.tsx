@@ -23,7 +23,7 @@ const DashboardHeader = () => {
         />
         <FaPenClip className="text-white font-bold text-2xl pl-2" />
       </div>
-      <div className={`lg:hidden ${isSidebarVisible ? "block" : "hidden"}`}>
+      <div className={`lg:hidden ${isSidebarVisible ? "" : "hidden"}`}>
         <Sidebar isVisible={isSidebarVisible} />
       </div>
     </div>

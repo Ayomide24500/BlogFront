@@ -7,7 +7,7 @@ const Sidebar = ({ isVisible }) => {
   return (
     <div
       className={`bg-green-300 text-white w-[10%] min-h-screen p-4 flex justify-center items-center flex-col gap-3 lg:flex ${
-        isVisible ? "block" : ""
+        isVisible ? "" : "hidden"
       }`}
     >
       Blog
