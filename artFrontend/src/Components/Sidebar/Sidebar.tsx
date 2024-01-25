@@ -18,7 +18,7 @@ const Sidebar = ({ isVisible }) => {
             dispatch(changeToggle("create"));
           }}
         >
-          Create a Blog
+          Create A Blog
         </button>
         <button
           className="bg-green-800 text-white py-5 px-5 cursor-pointer"
@@ -26,7 +26,7 @@ const Sidebar = ({ isVisible }) => {
             dispatch(changeToggle("view"));
           }}
         >
-          view a Blog
+          View A Blog
         </button>
         <button
           className="bg-green-800 text-white py-5 px-5 cursor-pointer"
@@ -34,7 +34,7 @@ const Sidebar = ({ isVisible }) => {
             dispatch(changeToggle("viewAll"));
           }}
         >
-          view all Blog
+          View All Blogs
         </button>
       </div>
     </div>
