@@ -9,6 +9,8 @@ const BlogPro = () => {
   const [content, setContent] = useState("");
   const [value, setValue] = useState("");
 
+  console.log(value);
+
   useEffect(() => {
     if (quill) {
       quill.on("text-change", () => {

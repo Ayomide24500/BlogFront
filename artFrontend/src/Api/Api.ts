@@ -2,15 +2,13 @@ import axios from "axios";
 
 const URL: string = "http://localhost:1290/api";
 
-export const registerAPI = async (email: any, password: any) => {
+export const registerAPI = async (data: any) => {
   try {
-    return await axios
-      .post(`${URL}/create-user`, { email, password })
-      .then((res) => {
-        console.log(res);
+    return await axios.post(`${URL}/create-user`, data).then((res) => {
+      console.log(res);
 
-        return res?.data;
-      });
+      return res?.data;
+    });
   } catch (error) {
     return error;
   }

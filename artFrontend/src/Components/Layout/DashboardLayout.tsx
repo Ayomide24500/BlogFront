@@ -3,14 +3,23 @@ import React from "react";
 import Header from "../static/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import Dashboard from "../../pages/Dashboard/Dashboard";
+import DashboardHeader from "../static/DashboardHeader";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex h-screen">
-      <Sidebar />
+    <div className="relative h-screen flex">
+      {/* Sidebar */}
+      <Sidebar isVisible={null} />
+
+      {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Header />
-        <Dashboard />
+        {/* Header */}
+        <DashboardHeader />
+
+        {/* Body Content */}
+        <div className="flex-1 overflow-x-hidden overflow-y-auto">
+          <Dashboard />
+        </div>
       </div>
     </div>
   );
